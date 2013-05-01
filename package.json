@@ -10,5 +10,35 @@
 	"fullName": "SyncURL",
 	"main": "main",
 	"id": "jid0-A3CMfbbQJf6wbkVy4wlMJmROKaA",
-	"name": "syncurl"
+	"name": "syncurl",
+	"preferences": [{
+		"name": "gSyncURL.enabled",
+		"title": "SyncUrl on Start?",
+		"description": "let SyncURL addon connect the remote server autimatically",
+		"type": "bool",
+		"value": false
+	},{
+		"title": "SyncURL from server",
+		"description": "the domain/ip of the SyncURL server",
+		"type": "string",
+		"name": "gSyncURL.server",
+		"value": "grassboy.tw"
+	},{
+		"title": "Server Port",
+		"description": "the port of the SyncURL server",
+		"type": "integer",
+		"name": "gSyncURL.port",
+		"value": 5400
+	},{
+		"title": "SyncURL Channel",
+		"description": "the channel will listen on the SyncURL server",
+		"type": "string",
+		"name": "gSyncURL.channel",
+		"value": "syncurl-newbie"
+	}]
 }
+
+
+
+
+

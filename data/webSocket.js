@@ -1,4 +1,5 @@
 var gWebSocket = WebSocket || MozWebSocket;
+var webSocket = null;
 var consoleLog = function(msg) {
 	var debug = false;
 	if (debug) {
@@ -25,7 +26,10 @@ var pingserver = function() {
 };
 //建立連線機制
 var CreateWebSocket = function(host, key) {
-	var webSocket = new gWebSocket(host + "/" + key, "gSyncURL");
+	if(webSocket){
+		webSocket.close();
+	}
+	webSocket = new gWebSocket(host + "/" + key, "gSyncURL");
 	webSocket.onopen = function() {
 		consoleLog("Reconnect Done...");
 		clearTimeout(retrytimer);
@@ -56,7 +60,6 @@ var CreateWebSocket = function(host, key) {
 	}
 	return webSocket;
 };
-var webSocket = null;
 self.port.on('message', function(data) {
 	var prefix = "gsURL.addon.";
 	var separate = "###_dre_###";
@@ -66,14 +69,16 @@ self.port.on('message', function(data) {
 	} else {
 		var args = data.split("::");
 		switch (args[0]) {
-		case(prefix + "connect") : args = args[1].split(separate);
+		case (prefix + "connect"):
+			args = args[1].split(separate);
 			try {
 				webSocket = CreateWebSocket(args[0], args[1]);
 			} catch(e) {
 				self.postMessage("gsURL.page.connectfailed", "*");
 			}
 			break;
-		case (prefix + "close") : if (webSocket) {
+		case (prefix + "close"): 
+			if (webSocket) {
 				webSocket.closeByAddon = true;
 				webSocket.close();
 			}
