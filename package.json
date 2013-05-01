@@ -1,1 +1,14 @@
-{"license": "", "description": "Sync Your URL from Remote Firefox Concurrently", "contributors": [], "author": "grassboy", "url": "", "dependencies": ["api-utils", "addon-kit"], "version": "0.5.rev163", "lib": "lib", "fullName": "SyncURL", "main": "main", "id": "jid0-A3CMfbbQJf6wbkVy4wlMJmROKaA", "name": "syncurl"}
+{
+	"license": "MIT License",
+	"description": "Sync Your URL from Remote Firefox Concurrently",
+	"contributors": ["Addon Icons: JackieTran (http://jackietran.deviantart.com)"],
+	"author": "Grassboy@plurk.com",
+	"url": "",
+	"dependencies": ["api-utils", "addon-kit"],
+	"version": "0.6",
+	"lib": "lib",
+	"fullName": "SyncURL",
+	"main": "main",
+	"id": "jid0-A3CMfbbQJf6wbkVy4wlMJmROKaA",
+	"name": "syncurl"
+}
