@@ -7,7 +7,7 @@
 	"dependencies": ["api-utils", "addon-kit"],
 	"version": "0.6",
 	"lib": "lib",
-	"fullName": "SyncURL",
+	"fullName": "SyncURL - 網址同步工具",
 	"main": "main",
 	"id": "jid0-A3CMfbbQJf6wbkVy4wlMJmROKaA",
 	"name": "syncurl",
